@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mrithyunjay K — Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg: #F5F2EC;
+  --fg: #1A1814;
+  --muted: #8A8577;
+  --accent: #D4611A;
+  --card: #EDEAE2;
+  --border: rgba(26,24,20,0.1);
+}
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 300;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* 🔥 GLOBAL CONTAINER (THIS FIXES EVERYTHING) */
+.container {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+@media (min-width: 768px) {
+  .container { padding: 0 40px; }
+}
+
+/* NAV */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  background: rgba(245,242,236,0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  z-index: 100;
+}
+
+.nav-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 0;
+}
+
+.nav-links { display: flex; gap: 28px; }
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.nav-links a:hover { color: var(--fg); }
+
+.nav-hint { font-size: 12px; color: var(--muted); }
+
+/* HERO */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 100px;
+}
+
+.hero-inner {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero-tag {
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: 24px;
+}
+
+.hero-headline {
+  font-family: 'Instrument Serif', serif;
+  font-size: clamp(42px, 7vw, 84px);
+  line-height: 1.1;
+  max-width: 800px;
+}
+
+.hero-headline em { color: var(--accent); }
+
+.hero-sub {
+  margin-top: 24px;
+  max-width: 520px;
+  color: var(--muted);
+}
+
+.hero-actions {
+  margin-top: 40px;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.btn {
+  padding: 12px 22px;
+  border-radius: 999px;
+  font-size: 14px;
+  cursor: pointer;
+  border: none;
+}
+
+.btn-primary {
+  background: var(--fg);
+  color: var(--bg);
+}
+
+.btn-secondary {
+  border: 1px solid var(--border);
+  background: transparent;
+}
+
+/* WORKS */
+.works {
+  padding: 80px 0;
+}
+
+.works-grid {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
+  gap: 20px;
+}
+
+.work-card {
+  background: var(--card);
+  padding: 24px;
+  border-radius: 16px;
+}
+
+/* ABOUT */
+.about {
+  padding: 80px 0;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+}
+
+@media (max-width: 768px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* FOOTER */
+footer {
+  padding: 80px 0;
+  text-align: center;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="container nav-inner">
+    <div>M</div>
+
+    <div class="nav-links">
+      <a href="#home">home</a>
+      <a href="#works">works</a>
+      <a href="#about">about</a>
+    </div>
+
+    <div class="nav-hint">Press C to copy email</div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="container hero-inner">
+
+    <p class="hero-tag">Hi, I'm Mrithyunjay</p>
+
+    <h1 class="hero-headline">
+      I design with <em>intention</em>,
+      making complexity feel invisible
+    </h1>
+
+    <p class="hero-sub">
+      Design is how I connect strategy with empathy — building products that feel effortless.
+    </p>
+
+    <div class="hero-actions">
+      <button class="btn btn-primary">Copy my email</button>
+      <button class="btn btn-secondary">Connect</button>
+    </div>
+
+  </div>
+</section>
+
+<!-- WORKS -->
+<section class="works" id="works">
+  <div class="container">
+
+    <h2>Selected Work</h2>
+
+    <div class="works-grid">
+      <div class="work-card">
+        <h3>Case Study 1</h3>
+        <p>Reducing risk and improving productivity.</p>
+      </div>
+
+      <div class="work-card">
+        <h3>Case Study 2</h3>
+        <p>Turning missed calls into revenue.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="container about-grid">
+
+    <div>
+      <h2>About me</h2>
+      <p>I design experiences that feel natural.</p>
+    </div>
+
+    <div>
+      <p>More content here.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <h2>Let’s connect</h2>
+    <p>Reach out anytime.</p>
+  </div>
+</footer>
+
+</body>
+</html>
