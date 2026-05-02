@@ -1,3 +1,20 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+#typing-text::after {
+  content: "|";
+  margin-left: 4px;
+}
+
+@keyframes blink {
+  0%, 50%, 100% { opacity: 1; }
+  25%, 75% { opacity: 0; }
+}
+
+.custom-font1 {
+  font-family: 'Birthstone', cursive;
+  color: #000000;
+  opacity: 0.8; 
+  font-size: 3rem;
+  letter-spacing: 1px;
+}
