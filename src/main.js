@@ -1,13 +1,13 @@
 import './style.css'
 import { initTypingEffect } from "./typing.js";
+import marquee from './components/marquee.html?raw';
 
 document.addEventListener("DOMContentLoaded", () => {
   initTypingEffect();
-});
 
-document.querySelector('#app').innerHTML = `
-<section class="hero">
-  <h1>Hi, I'm Shubham</h1>
-  <h2><span id="typing-text"></span></h2>
-</section>
-`;
+  const container = document.querySelector('#marquee-container');
+
+  if (container) {
+    container.innerHTML = marquee;
+  }
+});

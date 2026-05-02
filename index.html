@@ -10,6 +10,8 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Birthstone&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -178,21 +180,25 @@ footer {
 
 </style>
 </head>
-
 <body>
 
 <!-- NAV -->
-<nav>
+<nav class="navbar">
   <div class="container nav-inner">
-    <div>M</div>
 
+    <!-- Logo / Initial -->
+    <div class="logo">M.</div>
+
+    <!-- Center Links -->
     <div class="nav-links">
-      <a href="#home">home</a>
-      <a href="#works">works</a>
-      <a href="#about">about</a>
+      <a href="#home">Home</a>
+      <a href="#works">Works</a>
+      <a href="#about">About</a>
     </div>
 
-    <div class="nav-hint">Press C to copy email</div>
+    <!-- Right Hint -->
+    <div class="nav-hint">Press <span>C</span> to copy email</div>
+
   </div>
 </nav>
 
@@ -217,9 +223,18 @@ footer {
     </p>
 
     <div class="hero-actions">
-      <button class="btn btn-primary">Copy my email</button>
-      <button class="btn btn-secondary">Connect</button>
+      <button class="learn-more" onclick="download()">Download my resume</button>
+      <button class="learn-more" onclick="connect()">Connect</button>
     </div>
+<script>
+function download() {
+  window.open("https://drive.google.com/drive/folders/1mSDO7uF1m_lmTjFQjnNuna4nWXCfvyJF?usp=drive_link", "_blank");
+}
+
+function connect() {
+  window.open("https://www.linkedin.com/in/kumar-shubham37/", "_blank");
+}
+</script>
 
   </div>
 </section>
@@ -261,12 +276,51 @@ footer {
   </div>
 </section>
 
-<!-- FOOTER -->
+<!-- FOOTER CTA -->
 <footer>
-  <div class="container">
-    <h2>Let’s connect</h2>
-    <p>Reach out anytime.</p>
-  </div>
+  <h2 class="footer-heading">Thank you for<br>your curiosity</h2>
+  <p class="footer-sub">Feel free to reach out to explore opportunities, seek design advice, or just say hello.</p>
+
+<div class="footer-note" style="margin-top:20px;" id="marquee-container"></div>
+  <p class="footer-note" style="margin-top:20px;">© 2026 Kumar Shubham · Designed with intention</p>
 </footer>
+
+<div class="toast" id="toast">✓ Email copied to clipboard</div>
+
+<script>
+  function copyEmail() {
+    navigator.clipboard.writeText('shubhamgupta3773@gmail.com').catch(() => {});
+    const t = document.getElementById('toast');
+    t.classList.add('show');
+    setTimeout(() => t.classList.remove('show'), 2500);
+  }
+
+  // Keyboard shortcut
+  document.addEventListener('keydown', e => {
+    if (e.key === 'c' && !e.ctrlKey && !e.metaKey && document.activeElement.tagName !== 'INPUT') copyEmail();
+  });
+</script>
+<div id="ist-clock"></div>
+
+<script>
+  //time clock
+function updateISTClock() {
+  const now = new Date();
+
+  const options = {
+    timeZone: "Asia/Kolkata",
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+    hour12: true
+  };
+
+  const time = new Intl.DateTimeFormat("en-IN", options).format(now);
+  document.getElementById("ist-clock").textContent = "IST " + time;
+}
+
+setInterval(updateISTClock, 1000);
+updateISTClock();
+</script>
 </body>
 </html>
