@@ -137,7 +137,7 @@ button.learn-more:active::before {
   right: 20px;
 
   font-size: 16px;
-  font-family: monospace;
+  font-family: 'DM Sans', sans-serif;
   color: #D4611A;
 
   background:#e6e6e6;
@@ -252,3 +252,76 @@ button.learn-more:active::before {
   transform: translateY(-5px) scale(1.1);
   box-shadow: 0 10px 20px rgba(0,0,0,0.3);
 }
+
+/* page animations */
+.hero {
+  background: linear-gradient(
+    120deg,
+    #f5f3ef 0%,
+    #f0ebe5 40%,
+    #ffffff 100%
+  );
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: -20%;
+  left: -10%;
+  width: 500px;
+  height: 500px;
+
+  background: radial-gradient(circle, rgba(255,140,60,0.15), transparent 70%);
+  z-index: 0;
+}
+.hero-content {
+  animation: fadeUp 1s ease forwards;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: all 0.8s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal.active > * {
+  animation: fadeUp 0.6s ease forwards;
+}
+
+.reveal.active > *:nth-child(2) { animation-delay: 0.1s; }
+.reveal.active > *:nth-child(3) { animation-delay: 0.2s; }
+
+.reveal-left {
+  transform: translateX(-60px);
+}
+
+.reveal-right {
+  transform: translateX(60px);
+}
+
+.reveal {
+  transform: translateY(60px) scale(0.95);
+}
+
+.reveal.active {
+  transform: translateY(0) scale(1);
+}
+
+/* page animations */
+
