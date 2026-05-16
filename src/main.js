@@ -32,3 +32,17 @@ const observer = new IntersectionObserver((entries) => {
 });
 
 reveals.forEach(el => observer.observe(el));
+
+const slideshows = document.querySelectorAll(".slideshow");
+
+slideshows.forEach((slide) => {
+
+  const images = slide.dataset.images.split(",");
+  let index = 0;
+
+  setInterval(() => {
+    index = (index + 1) % images.length;
+    slide.src = images[index];
+  }, 3000);
+
+});
