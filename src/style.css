@@ -373,14 +373,52 @@ footer::before {
 /* page animations */
 
 /* works section */
+/* works section */
+
 .projects-section{
+    position: relative;
+
     width:100%;
-    padding:6rem 2rem;
-    background:#f4f0e6;
+    padding:8rem 2rem;
+
     display:flex;
     flex-direction:column;
     align-items:center;
-    gap:4rem;
+    gap:5rem;
+
+    overflow:hidden;
+
+    background:
+    linear-gradient(
+        180deg,
+        #f5f3ef 0%,
+        #e9e1d5 25%,
+        #cfc5b7 55%,
+        #5c5752 82%,
+        #1a1a1a 100%
+    );
+}
+
+/* ambient glow */
+.projects-section::before{
+    content:"";
+
+    position:absolute;
+    inset:0;
+
+    background:
+    radial-gradient(
+        circle at top left,
+        rgba(255,170,80,0.18),
+        transparent 30%
+    ),
+    radial-gradient(
+        circle at bottom right,
+        rgba(120,120,255,0.10),
+        transparent 30%
+    );
+
+    pointer-events:none;
 }
 
 .section-title{
@@ -637,7 +675,7 @@ footer::before {
 
     background:
     linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.55)),
-    url("/photos/about-bg.jpg");
+    url("/photos/bg1.jpg");
 
     background-size:cover;
     background-position:center;
