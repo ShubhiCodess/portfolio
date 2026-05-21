@@ -111,7 +111,7 @@ const projects = [
     description:
       "Currently exploring cloud infrastructure, deployment systems, networking concepts, and scalable backend architecture.",
 
-    image: "/photos/post8.png",
+    image: "/photos/bg345.jpg",
 
     link:
       "https://aws.amazon.com/",
