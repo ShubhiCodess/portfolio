@@ -1,6 +1,9 @@
 import './style.css'
 import { initTypingEffect } from "./typing.js";
 import marquee from './components/marquee.html?raw';
+import { inject } from "@vercel/analytics"
+
+inject()
 
 document.addEventListener("DOMContentLoaded", () => {
   initTypingEffect();
